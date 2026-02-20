@@ -18,16 +18,16 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-6">
-              <div className="bg-white/95 p-2 rounded-xl shadow-sm">
+              {/* <div className="bg-white/95 p-2 rounded-xl shadow-sm"> */}
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-white.png"
                   alt="Tawakkal Overseas Logo"
                   width={400}
                   height={80}
                   className="h-20 w-auto object-contain"
                   priority
                 />
-              </div>
+              {/* </div> */}
             </Link>
             <p className="text-sm leading-relaxed text-primary-foreground/70">
               Serving the community with faith, compassion, and dedication.
