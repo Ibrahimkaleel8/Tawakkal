@@ -39,12 +39,50 @@ Sunday: Closed`,
 ]
 
 export function ContactContent() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form State
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({ ...prev, [id]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
+    setIsSubmitting(true)
+
+    // REPLACE THESE WITH YOUR ACTUAL GOOGLE FORM DETAILS
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScREXmrpIlrv-7IW2gZ3poBXOGI6wU4EA-qPXVTz4XtO5xvWA/formResponse?usp=sharing&ouid=102707927470309976767"
+
+    // Create form data for Google Forms
+    const data = new FormData()
+    data.append("entry.957003457", formData.name)
+    data.append("entry.1867777262", formData.email)
+    data.append("entry.234336842", formData.phone)
+    data.append("entry.24870070", formData.message)
+
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      })
+      setSubmitted(true)
+      setFormData({ name: "", email: "", phone: "", message: "" }) // Clear form
+    } catch (error) {
+      console.error("Submission error:", error)
+      alert("Something went wrong. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -116,6 +154,13 @@ export function ContactContent() {
                       <p className="mt-2 text-sm text-muted-foreground">
                         Thank you for reaching out. We will respond soon.
                       </p>
+                      <Button
+                        onClick={() => setSubmitted(false)}
+                        variant="link"
+                        className="mt-4 text-primary"
+                      >
+                        Send another message
+                      </Button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -126,8 +171,11 @@ export function ContactContent() {
                           </Label>
                           <Input
                             id="name"
+                            value={formData.name}
+                            onChange={handleChange}
                             placeholder="Your full name"
                             required
+                            disabled={isSubmitting}
                             className="rounded-xl border-border bg-background"
                           />
                         </div>
@@ -138,8 +186,11 @@ export function ContactContent() {
                           <Input
                             id="email"
                             type="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             placeholder="you@example.com"
                             required
+                            disabled={isSubmitting}
                             className="rounded-xl border-border bg-background"
                           />
                         </div>
@@ -152,7 +203,10 @@ export function ContactContent() {
                         <Input
                           id="phone"
                           type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
                           placeholder="+91 (000) 000-0000"
+                          disabled={isSubmitting}
                           className="rounded-xl border-border bg-background"
                         />
                       </div>
@@ -163,9 +217,12 @@ export function ContactContent() {
                         </Label>
                         <Textarea
                           id="message"
+                          value={formData.message}
+                          onChange={handleChange}
                           placeholder="How can we help you?"
                           rows={5}
                           required
+                          disabled={isSubmitting}
                           className="rounded-xl border-border bg-background resize-none"
                         />
                       </div>
@@ -173,10 +230,17 @@ export function ContactContent() {
                       <Button
                         type="submit"
                         size="lg"
+                        disabled={isSubmitting}
                         className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                       >
-                        <Send size={16} className="mr-2" />
-                        Send Message
+                        {isSubmitting ? (
+                          "Sending..."
+                        ) : (
+                          <>
+                            <Send size={16} className="mr-2" />
+                            Send Message
+                          </>
+                        )}
                       </Button>
                     </form>
                   )}
