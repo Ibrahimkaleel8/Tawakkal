@@ -20,29 +20,12 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-transparent"
-      )}
-    >
+    <header className="bg-white border-b border-border shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-10 h-28">
         <Link href="/" className="flex items-center">
-          <div className={cn(
-            "p-2 rounded-xl transition-all duration-300",
-            !scrolled && "bg-white/90 shadow-sm"
-          )}>
+          <div className="p-2 rounded-xl transition-all duration-300">
             <Image
               src="/images/logo.png"
               alt="Tawakkal Overseas Logo"
@@ -62,13 +45,9 @@ export function Navbar() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:opacity-100",
-                scrolled
-                  ? pathname === link.href
-                    ? "text-black font-bold"
-                    : "text-black/60"
-                  : pathname === link.href
-                    ? "text-white font-bold"
-                    : "text-white/70"
+                pathname === link.href
+                  ? "text-black font-bold"
+                  : "text-black/60"
               )}
             >
               {link.label}
@@ -84,7 +63,7 @@ export function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-black"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -99,7 +78,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-b border-border bg-background md:hidden"
+            className="overflow-hidden border-b border-border bg-white md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map((link) => (
