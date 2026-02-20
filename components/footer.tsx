@@ -13,18 +13,18 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-10 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-block mb-6 ml-14">
-              <div className="bg-white/95 p-3 rounded-xl shadow-sm">
+            <Link href="/" className="inline-block mb-6">
+              <div className="bg-white/95 p-2 rounded-xl shadow-sm">
                 <Image
                   src="/images/logo.png"
                   alt="Tawakkal Overseas Logo"
                   width={400}
                   height={80}
-                  className="h-16 w-auto object-contain "
+                  className="h-20 w-auto object-contain"
                   priority
                 />
               </div>
