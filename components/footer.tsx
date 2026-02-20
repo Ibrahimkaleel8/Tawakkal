@@ -59,7 +59,7 @@ export function Footer() {
               Contact Info
             </h3>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <p>Address: Bhaskar Nagar, Uchila Udupi Dt.</p>
+              <p>Address: Bhaskar Nagar, Uchila Udupi District.</p>
     
              <p>Email:  <Link href="mailto:Thawakkal1996@gmail.com" className="hover:text-primary-foreground transition-colors">
                 Thawakkal1996@gmail.com

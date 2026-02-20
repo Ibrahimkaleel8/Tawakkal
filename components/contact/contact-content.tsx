@@ -15,25 +15,26 @@ const contactInfo = [
     icon: MapPin,
     label: "Address",
     value: "Tawakkal Muslim Community Center",
-    detail: "Your City, State, Country",
+    detail: "Bhaskar Nagar, Uchila Udupi District.",
   },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 (000) 000-0000",
-    detail: "Mon - Fri, 9:00 AM - 6:00 PM",
-  },
+  // {
+  //   icon: Phone,
+  //   label: "Phone",
+  //   value: "+91 (000) 000-0000",
+  //   detail: "Mon - Fri, 9:00 AM - 6:00 PM",
+  // },
   {
     icon: Mail,
     label: "Email",
-    value: "community@tawakkalmuslim.com",
-    detail: "We reply within 24 hours",
+    value: "Thawakkal1996@gmail.com",
+    // detail: "We reply within 24 hours",
   },
   {
     icon: Clock,
     label: "Hours",
-    value: "Open Daily",
-    detail: "Fajr to Isha prayer times",
+    value: `Monday - Friday: 9:00 AM - 5:00 PM
+Saturday: 10:00 AM - 2:00 PM
+Sunday: Closed`,
   },
 ]
 
@@ -80,7 +81,7 @@ export function ContactContent() {
                         <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                           {info.label}
                         </p>
-                        <p className="mt-1 text-sm font-semibold text-card-foreground">
+                        <p className="mt-1 text-sm font-semibold text-card-foreground whitespace-pre-line">
                           {info.value}
                         </p>
                         <p className="text-xs text-muted-foreground">
@@ -186,7 +187,7 @@ export function ContactContent() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map Placeholder
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
@@ -210,7 +211,7 @@ export function ContactContent() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

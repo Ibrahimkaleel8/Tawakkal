@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react"
 
 const previewImages = [
   { src: "/images/photo15.jpeg", alt: "Community prayer gathering" },
-  { src: "/images/indianeducation.jpg", alt: "Quran education class" },
+  { src: "/images/photo16.jpeg", alt: "Quran education class" },
   { src: "/images/photo5.jpeg", alt: "Community iftar dinner" },
   { src: "/images/photo25.jpeg", alt: "Charity distribution event" },
 ]
