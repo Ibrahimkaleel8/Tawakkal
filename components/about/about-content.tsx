@@ -69,12 +69,6 @@ const timeline = [
   },
 ]
 
-const leaders = [
-  { name: "Ahmad Hassan", role: "President", initial: "AH" },
-  { name: "Fatima Ali", role: "Vice President", initial: "FA" },
-  { name: "Omar Ibrahim", role: "Secretary", initial: "OI" },
-  { name: "Aisha Khan", role: "Treasurer", initial: "AK" },
-]
 
 export function AboutContent() {
   return (
@@ -173,8 +167,8 @@ export function AboutContent() {
                 <FadeIn key={item.year} delay={i * 0.1}>
                   <div
                     className={`relative flex items-start gap-8 md:gap-12 ${i % 2 === 0
-                        ? "md:flex-row"
-                        : "md:flex-row-reverse md:text-right"
+                      ? "md:flex-row"
+                      : "md:flex-row-reverse md:text-right"
                       }`}
                   >
                     {/* Dot */}
@@ -210,35 +204,26 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* Leadership */}
-      {/* <section className="bg-secondary py-24 px-6">
-        <div className="mx-auto max-w-7xl">
+      {/* Founding Member */}
+      <section className="bg-secondary py-24 px-6">
+        <div className="mx-auto max-w-7xl text-center">
           <SectionTitle
-            label="Leadership"
-            title="Meet Our Team"
-            description="Dedicated individuals who guide our organization with vision and commitment."
+            label="Founding Member"
+            title="Our Leadership"
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {leaders.map((leader, i) => (
-              <FadeIn key={leader.name} delay={i * 0.1}>
-                <div className="h-full flex flex-col rounded-2xl border border-border bg-card p-8 text-center">
-                  <div className="mx-auto mb-4 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                    <span className="font-serif text-2xl font-bold">
-                      {leader.initial}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-lg font-semibold text-card-foreground">
-                    {leader.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {leader.role}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="mx-auto max-w-2xl overflow-hidden rounded-2xl border border-border bg-card">
+              <Image
+                src="/images/leaders.jpeg"
+                alt="Founding Member"
+                width={800}
+                height={600}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </FadeIn>
         </div>
-      </section> */}
+      </section>
     </>
   )
 }

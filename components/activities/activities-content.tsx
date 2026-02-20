@@ -36,9 +36,17 @@ const activities = [
     image: "/images/food-drive.jpg",
   },
   {
+    icon: HandHeart,
+    title: "Support for Poor Girl's Weddings",
+    category: "Community",
+    description:
+      "Financial assistance for wedding expenses of girls from low-income families. Preserving dignity by easing financial stress and supporting families during important life milestones.",
+    image: "/images/marraige.jpg",
+  },
+  {
     icon: Users,
     title: "Masjid Construction & Renovation",
-    category: "Community",
+    category: "Development",
     description:
       "Completion of 3 Masjids/Madrasas to create sacred spaces for worship and community growth. Strengthening unity by providing safe, accessible facilities for education, prayer, and social harmony.",
     image: "/images/jummah.webp",
@@ -74,6 +82,14 @@ const activities = [
     description:
       "Free health check-up camps and awareness programs organized in collaboration with healthcare professionals to serve the community.",
     image: "/images/healthcamp.jpg",
+  },
+  {
+    icon: Stethoscope,
+    title: "HealthKit Distributions & Emergency Aids",
+    category: "Welfare",
+    description:
+      "Medical aid, PPE kits, and wheelchairs provided to patients, volunteers, and differently-abled individuals in need. 25 wheelchairs were distributed, PPE kits distributed during Covid for patients and funeral workers. Special training for Ambulance workers.",
+    image: "/images/ppekit.jpg",
   },
   {
     icon: Globe,
