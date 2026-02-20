@@ -39,14 +39,19 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-10 h-28">
         <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt="Tawakkal Overseas Logo"
-            width={400}
-            height={80}
-            className="h-24 w-auto object-contain"
-            priority
-          />
+          <div className={cn(
+            "p-2 rounded-xl transition-all duration-300",
+            !scrolled && "bg-white/90 shadow-sm"
+          )}>
+            <Image
+              src="/images/logo.png"
+              alt="Tawakkal Overseas Logo"
+              width={400}
+              height={80}
+              className="h-20 w-auto object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Links */}

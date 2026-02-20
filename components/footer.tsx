@@ -17,15 +17,17 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="Tawakkal Overseas Logo"
-                width={240}
-                height={48}
-                className="h-16 w-auto object-contain"
-                priority
-              />
+            <Link href="/" className="inline-block mb-6 ml-14">
+              <div className="bg-white/95 p-3 rounded-xl shadow-sm">
+                <Image
+                  src="/images/logo.png"
+                  alt="Tawakkal Overseas Logo"
+                  width={400}
+                  height={80}
+                  className="h-16 w-auto object-contain "
+                  priority
+                />
+              </div>
             </Link>
             <p className="text-sm leading-relaxed text-primary-foreground/70">
               Serving the community with faith, compassion, and dedication.
@@ -60,8 +62,8 @@ export function Footer() {
             </h3>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
               <p>Address: Bhaskar Nagar, Uchila Udupi District.</p>
-    
-             <p>Email:  <Link href="mailto:Thawakkal1996@gmail.com" className="hover:text-primary-foreground transition-colors">
+
+              <p>Email:  <Link href="mailto:Thawakkal1996@gmail.com" className="hover:text-primary-foreground transition-colors">
                 Thawakkal1996@gmail.com
               </Link>
               </p>
