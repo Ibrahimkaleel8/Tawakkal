@@ -15,7 +15,7 @@ export function AboutPreview() {
           <FadeIn direction="right">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/education.jpg"
+                src="/images/photo17.jpeg"
                 alt="Community members gathering together"
                 fill
                 className="object-cover"

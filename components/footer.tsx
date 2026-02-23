@@ -20,11 +20,11 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               {/* <div className="bg-white/95 p-2 rounded-xl shadow-sm"> */}
                 <Image
-                  src="/images/logo-white.png"
+                  src="/images/footer-logo.png"
                   alt="Tawakkal Overseas Logo"
                   width={400}
                   height={80}
-                  className="h-20 w-auto object-contain"
+                  className="h-32 w-auto object-contain"
                   priority
                 />
               {/* </div> */}
